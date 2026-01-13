@@ -1,0 +1,401 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+   --backgroundcontenair : hsl(0, 0%, 98%);
+    --backgroundbody: hsl(234, 39%, 85%);
+    --colorclair:hsl(233, 11%, 84%);
+    --color-font-principal:hsl(236, 9%, 61%);
+    --focusfont:hsl(235, 19%, 35%);
+
+}
+
+body{
+    margin: 0;
+    font-family:" Josefin Sans";
+    background-color: var(--colorclair);
+    
+     
+}
+
+
+
+
+.site-container{
+     /* Définition des zones de la grille */
+    display: grid;
+   
+       /* Définition des tailles de colonnes */
+     grid-template-rows: 1.5fr 3fr 1fr ;
+     grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+
+        
+    /* Hauteur minimale pour remplir la fenêtre */
+    min-height: 100vh;
+    
+    /* Espacement entre les zones */
+    gap: 15px;
+     /* Marge autour du site */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    color: var(--color-font-principal);
+}
+.header {
+   grid-area:  1.7 / 1;
+    grid-column-start:  1;
+    grid-column-end:  5;
+    background-image: url(./images/bg-desktop-light.jpg);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+     max-height: 370px;
+  
+}
+h1{
+     font-family: "Josefin Sans";
+     padding-left: 200px;
+     top: 30px;
+     left: 160px;
+     position: absolute;
+
+}
+#themeBtn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  top: 40px;
+  left: 720px;
+  padding-left: -40px;
+  position: absolute;
+
+}
+
+.input-group{
+     
+    
+     input{
+          width:400px;
+          padding: 10px;
+          border-radius: 5px;
+          margin: 5 auto ;
+          top: 70px;
+          left: 360px;
+          position: absolute;
+
+     }
+     
+}
+.contenair{
+
+        grid-area: 2/2;   
+        grid-row-start: 1.5;
+        grid-row-end:3 ;
+        width: 400px;
+        z-index: 1;
+        max-height: 400px;
+        grid-row: 2 / span 1.5;
+        overflow: hidden;
+        background-color: var(--backgroundcontenair);
+        font-family: "Josefin Sans";
+        margin: -27px auto 0;
+        border-radius: 6px;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+
+        
+}
+
+/* ---------- LIST ---------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px;
+  border-radius: 0;
+  margin-bottom: 12px;
+  transition: transform 0.2s, opacity 0.2s;
+  border-bottom: 1px solid var(--colorclair);
+
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- TASK ---------- */
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--color-font-principal);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.completed .circle {
+  
+  background: linear-gradient(135deg, #55ddff, #c058f3);
+ 
+}
+.completed .circle::after {
+  content: url(./images/icon-check.svg);
+  padding: 4px;
+  background-size: contain;
+
+}
+.completed span {
+  text-decoration: line-through;
+  color: var(--colorclair);
+}
+
+
+
+
+
+
+
+.Delete{
+    background-color: 'transparent';
+    border: none;
+    color: hsl(236, 9%, 61%);
+    font-size: 16px;
+    visibility:'hidden';
+   
+}
+   #btnx  {
+    width: 10px;
+    height: 10px;
+    background-color:transparent ;
+    border: none;
+    background-image: url(./images/icon-cross.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    
+    
+    
+}
+
+.controls{
+    grid-area: 3/2;
+     grid-column-start: 2 ;
+     grid-column-end:  3;
+    background-color: var(--backgroundcontenair);
+    width: 400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+   
+   
+   
+}
+.filters button {
+  background: none;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 13px;
+   display: inline;
+  font-size: small;
+  color: var(--color-font-principal);
+
+  
+}
+
+.filters button:hover {
+  color: var(--focusfont);
+}
+.filters button:focus {
+  color: blue;
+}
+#clear{
+ 
+  z-index: 1;
+  background: none;
+  border: none;
+  margin-right: 10px;
+  font-size: 13px;
+  font-size: small;
+  color: var(--color-font-principal);
+}
+.clear {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 13px;
+}
+#nbItem {
+  background: none;
+  border: none;
+  margin-right: 90px;
+  font-size: 9px;
+  color: var(--color-font-principal);
+}
+.footer{
+    grid-area: 3/2;
+    grid-column-start:  2;
+    grid-column-end:  3;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-font-principal);
+    font-family: "Josefin Sans";
+    margin-top: 0;
+}
+
+
+.clair body  {
+    background-color: rgb(86, 11, 11) ;
+    color: hsl(235, 19%, 35%) ;
+    
+}
+
+
+
+.clair #themeBtn{
+  background-image: url(./images/icon-moon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+} 
+.sombre #themeBtn{
+  background-image: url(./images/icon-sun.svg);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.sombre .header{
+  background-image: url(./images/bg-desktop-dark.jpg);
+}
+.sombre .site-container {
+   background-color: rgb(21, 21, 22) ;
+    color:  Gray  ;
+}
+.sombre .contenair  {
+    background-color:  hsl(235, 24%, 19%);
+    color:  Gray  ;
+}
+.sombre .input-group input{
+     background-color:  hsl(235, 24%, 19%);
+    color:  Gray  ;
+}
+
+@media only screen and (max-width: 375px) {
+body {
+        
+    margin: 0;
+    padding: 0px;
+  
+    
+    
+}
+.site-container{
+        
+    width: 375px;
+    
+    margin: 0;
+   
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+
+
+}
+.contenair{
+  width: 340px;
+  margin-bottom: 10px; 
+  margin: -45px auto 0;
+
+   height: 300px;
+}
+
+
+.header{
+          
+      margin: 0;
+      margin-bottom: 10px; 
+      width: 375px;
+      height: 150px;
+      padding: 40px;
+      border-radius: 0;
+       h1{
+        
+         padding-left: 20px;
+         top: 20px;
+        left: 16px;
+        font-size: 18px;
+      }
+}
+.input-group{
+  input{
+  width: 300px;      
+  margin: 10 auto ;
+  top: 50px;
+  left: 30px;
+ 
+}
+
+}
+.controls{
+  width: 340px;
+  height: 60px;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+ flex-direction: column;
+
+ 
+
+
+}
+#clear{
+  transform: translateY(-98px) translateX(70px);
+  z-index: 1;
+  background: none;
+  border: none;
+  font-size: 10px;
+  color: var(--color-font-principal);
+ text-wrap: none;
+  word-spacing: 2px;
+}
+#nbItem{
+ transform: translateY(-70px) translateX(-70px);
+
+ z-index: 1;
+}
+
+#themeBtn{
+ top: 20px;
+  left: 320px;
+  padding-left: -40px;
+  position: absolute;
+}
+.filters button {
+  margin-right: 5px;
+ 
+}
+
+
+}
