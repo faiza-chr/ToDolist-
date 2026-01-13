@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet ?? -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+  </style>
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Josefin+Sans">
+</head>
+<body class="clair">
+<div class="site-container" >
+<div class="header">
+  <div><h1>TODO</h1>
+    
+    <button id="themeBtn"> </button> 
+    
+     </div>
+
+  <div class="input-group">
+    <input type="text" id="taskInput" placeholder="create new to dp">
+    <button onclick="addTask()" hidden>+</button>
+  </div>
+  
+</div>
+ 
+<div class=" contenair">
+     <button id="addBtn" hidden>Ajouter</button>
+
+    
+    <ul id="taskList"></ul>
+      
+    </ul>
+    
+</div>
+
+<div class="controls">
+    <button id="nbItem" ></button>
+    <div class="filters">
+    
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('active')">Active</button>
+      <button onclick="filterTasks('completed')">completed</button>
+    </div>
+      <button  id = "clear" onclick="clearCompleted()">clear Completed </button>
+    
+    
+  </div>
+  </div>
+
+  <footer >
+  <div class="footer">
+  <p>Drag and drop to reorder list</p>
+  <div class="attribution" hidden>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Chrigui Faiza</a>.
+  </div>
+  </div>
+
+  </footer>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
